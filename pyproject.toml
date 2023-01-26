@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "coral-is"
+version = "0.1.0"
+description = "Coral Dev Board Independent Study"
+authors = ["Gavin Hailey <gavin.hailey@du.edu>"]
+readme = "README.md"
+packages = [{include = "coral_is"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+python-periphery = "^2.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
