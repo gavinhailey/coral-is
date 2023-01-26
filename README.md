@@ -8,6 +8,7 @@ This is a repository for my Coral Dev Board Independent Study at DU. I will use 
 
 - [Coral Independent Study](#coral-independent-study)
   - [Initial Setup](#initial-setup)
+- [Updates](./UPDATES.md)
 
 ## Initial Setup
 
