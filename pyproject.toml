@@ -9,6 +9,7 @@ packages = [{include = "coral_is"}]
 [tool.poetry.dependencies]
 python = "^3.7"
 python-periphery = "^2.3.0"
+Pillow = "^9.4.0"
 
 
 [build-system]

@@ -8,6 +8,9 @@ This is a repository for my Coral Dev Board Independent Study at DU. I will use 
 
 - [Coral Independent Study](#coral-independent-study)
   - [Initial Setup](#initial-setup)
+    - [Host Setup](#host-setup)
+    - [Flashing the Board](#flashing-the-board)
+    - [Images for Reference](#images-for-reference)
     - [Prerequisites](#prerequisites)
     - [Post Install](#post-install)
     - [Documentation](#documentation)
@@ -19,13 +22,37 @@ This is a repository for my Coral Dev Board Independent Study at DU. I will use 
 
 ## Initial Setup
 
-Getting started with the Coral Dev Board is fairly straightforward. The documentation Google provides is thorough and easy to follow.
-
-The short version is download the [Mendel Linux image](https://coral.ai/docs/dev-board/get-started/#flash-the-board) and flash it to a microSD card. I used [Balena Etcher](https://www.balena.io/etcher/) to flash the image. Set the boot mode on the coral board to boot and flash the internal stoage from the microSD card and plug it in. The board should boot up and you should be able to SSH into it via the [`mdt`](https://coral.ai/docs/dev-board/mdt/) utility over a USB-C data cable. Then setup internet connection and ssh for convienence.
+### Host Setup
 
 There is a convience script included at `scripts/host_setup.sh` that will do all of this for you. Just run it on your host machine and it will get all of the dependencies and the mendel iso.
 
-Refer to the documentaton linked below for the full guide
+### Flashing the Board
+
+Getting started with the Coral Dev Board is fairly straightforward. The documentation Google provides is thorough and easy to follow.
+
+The short version is download the [Mendel Linux image](https://coral.ai/docs/dev-board/get-started/#flash-the-board) and flash it to a microSD card. I used [Balena Etcher](https://www.balena.io/etcher/) to flash the image. Set the boot mode on the coral board to boot and flash to internal stoage on from the microSD card and plug it in. The board should boot up and you should be able to SSH into it via the [`mdt`](https://coral.ai/docs/dev-board/mdt/) utility over a USB-C data cable. Then setup internet connection and ssh for convienence.
+
+To put the board into flash from microSD or internal storage mode, refer to this table for the switches found near the heatsink and below the GPIO Pins:
+
+On is towards the GPIO Pins, Off is away from GPIO Pins.
+
+| Boot Mode | Switch 1 | Switch 2 | Switch 3 | Switch 4 |
+|-----------|----------|----------|----------|----------|
+| Flash from microSD | On | Off | On | On |
+| Use internal storage (eMMC) | On | Off | Off | Off |
+
+### Images for Reference
+
+Flash from microSD mode:
+![Flash from microSD mode](https://coral.ai/static/docs/images/devboard/devboard-bootmode-sdcard.jpg)
+
+Internal storage mode:
+![Internal storage mode](https://coral.ai/static/docs/images/devboard/devboard-bootmode-emmc.jpg)
+
+microSD slot location:
+![microSD slot location](https://coral.ai/static/docs/images/devboard/devboard-sdcard.jpg)
+
+Refer to the [documentaton](#documentation) linked below for the full guide
 
 ### Prerequisites
 
@@ -39,7 +66,7 @@ Refer to the documentaton linked below for the full guide
 ### Post Install
 
 Any additional useful packages and tools can be installed via the `scripts/coral_setup.sh` script.
-For now this script just upgrades pip and installs pillow (for image processing).
+For now this script just upgrades pip and installs pillow (for image processing), python-periphery (GPIO).
 
 ### Documentation
 
